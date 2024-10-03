@@ -105,7 +105,7 @@ void	draw_vector(t_info *info)
 		lenght = (60 / (info->size * cos(count))) * ((WIDTH/ 2) / tan(0.523599));
 		point_depart = (HEIGHT / 2) - (lenght / 2);
 		double j = 0;
-		double step = (double)60 / (double)lenght;
+		double step = (double)info->h / (double)lenght;
 		int yy = 0;
 		while (yy < point_depart)
 		{
@@ -125,13 +125,13 @@ void	draw_vector(t_info *info)
 			int xxx;
 			if (info->flag == 0)
 			{
-				xxx = (int)info->intersection_x % 60;
+				xxx = (int)(info->w * info->intersection_x / 60) % info->w;
 				yyy = j;
 			}
 			else
 			{
 				yyy = j;
-				xxx = (int)info->intersection_y % 60;
+				xxx = (int)(info->h * info->intersection_y / 60) % info->h;
 			}
 			var2 = ((yyy * info->size_line) + (xxx * (info->bet_pxl / 8)));
 			color = *(int*)(info->image + var2);

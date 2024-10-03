@@ -100,7 +100,7 @@ int main(int ac, char **av)
 		return (0);
 	}
 	init_window(&info);
-	info.barbie = "./bluestone1.xpm";
+	info.barbie = "./cat.xpm";
 	info.drow_barbie = mlx_xpm_file_to_image(info.mlx, info.barbie, &info.w, &info.h);
 	info.image = mlx_get_data_addr(info.drow_barbie, &info.bet_pxl, &info.size_line, &info.endian);
 	mlx_hook(info.mlx_win, 17, 0, ft_exit, 0);
